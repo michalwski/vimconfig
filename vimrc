@@ -13,13 +13,17 @@ set guioptions-=r
 set guioptions-=L
 set guioptions-=R
 
+"if has('gui_running')
+"	colorscheme desert
+"endif
+
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Monaco:h11
 	endif
 elseif $TERM =~ 'xterm'
 	set t_Co=256
-	colorscheme peaksea
+	"colorscheme riri
 elseif $TERM =~ 'rxvt-unicode'
 	colorscheme riri
 endif
@@ -70,9 +74,8 @@ autocmd FileType c,cpp map <buffer> <silent> <Leader>e :call g:ClangUpdateQuickF
 
 " Vimerl plugin:
 let erlang_folding     = 1
-let erlang_show_errors = 0
-let erlang_skel_header = {'author': 'Ricardo Catalinas Jiménez <jimenezrick@gmail.com>',
-		       \  'owner' : 'Ricardo Catalinas Jiménez'}
+let erlang_show_errors = 1
+let erlang_skel_header = {'author': 'Michal Piotrowski <michalwski@gmail.com>', 'owner': 'Michal Piotrowski'}
 
 " Syntastic plugin:
 let syntastic_auto_loc_list = 1
@@ -108,6 +111,11 @@ map <silent> <Leader><Space> :call <SID>AddSpaces()<Enter>
 map <silent> <Leader><BS>    :call <SID>RemoveSpaces()<Enter>
 " Collapses current block of blank lines to one
 map <silent> <Leader><Del>   :call <SID>CollapseSpaces()<Enter>
+
+" Use CTRL-S for saving, also in Insert mode
+noremap <C-S> :update<CR>
+vnoremap <C-S> <C-C>:update<CR>
+inoremap <C-S> <C-O>:update<CR>
 
 function s:AddSpaces() range
 	let separation = 2
