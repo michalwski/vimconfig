@@ -24,6 +24,8 @@ elseif $TERM =~ 'rxvt-unicode'
 	colorscheme riri
 endif
 
+scriptencoding utf-8
+set encoding=utf-8
 set nocompatible
 set history=100
 set title
@@ -37,7 +39,7 @@ set autoindent
 set incsearch
 set nowrap
 set list
-set listchars=tab:\|\ ,trail:·,precedes:<,extends:>
+set listchars=tab:\|\ ,precedes:<,extends:>,trail:·
 set nofoldenable
 set foldnestmax=1
 set wildmenu
@@ -73,9 +75,8 @@ autocmd FileType c,cpp map <buffer> <silent> <Leader>e :call g:ClangUpdateQuickF
 
 " Vimerl plugin:
 let erlang_folding     = 1
-let erlang_show_errors = 0
-let erlang_skel_header = {'author': 'Ricardo Catalinas Jiménez <jimenezrick@gmail.com>',
-		       \  'owner' : 'Ricardo Catalinas Jiménez'}
+let erlang_show_errors = 1
+let erlang_skel_header = {'author': 'Michal Piotrowski <michal.piotrowski@erlang-solutions.com>'}
 
 " Syntastic plugin:
 let syntastic_auto_loc_list = 1
