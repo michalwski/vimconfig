@@ -16,6 +16,7 @@ set guioptions-=R
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Monaco:h11
+		colorscheme desert
 	endif
 elseif $TERM =~ 'xterm'
 	set t_Co=256
