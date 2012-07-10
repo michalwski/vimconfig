@@ -83,6 +83,10 @@ let erlang_skel_header = {'author': 'Michal Piotrowski <michal.piotrowski@erlang
 let syntastic_auto_loc_list = 1
 let syntastic_mode_map      = {'mode': 'passive'}
 
+" GHC-mod plugin:
+autocmd FileType haskell map <buffer> <silent> <Leader>e :GhcModCheck<Enter>
+autocmd FileType haskell map <buffer> <silent> <Leader>t :GhcModType<Enter>
+
 " Neco-GHC plugin:
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let $PATH = $PATH . ':' . expand('~/.cabal/bin')
