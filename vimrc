@@ -17,6 +17,7 @@ if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Monaco:h11
 		colorscheme desert
+		let macvim_hig_shift_movement = 1
 	endif
 elseif $TERM =~ 'xterm'
 	set t_Co=256
