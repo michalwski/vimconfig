@@ -87,14 +87,16 @@ autocmd FileType c,cpp highlight clear SpellBad   | highlight SpellBad ctermfg=w
 autocmd FileType c,cpp highlight clear SpellLocal | highlight SpellLocal ctermfg=white ctermbg=blue
 autocmd FileType c,cpp map <buffer> <silent> <Leader>e :call g:ClangUpdateQuickFix()<Enter>
 
+
 " Vimerl plugin:
 let erlang_folding     = 1
 let erlang_show_errors = 1
 let erlang_skel_header = {'author': 'Michal Piotrowski <michal.piotrowski@erlang-solutions.com>'}
 
 " Syntastic plugin:
+let g:syntastic_always_populate_loc_list=1
 let syntastic_auto_loc_list = 1
-let syntastic_mode_map      = {'mode': 'passive'}
+let syntastic_mode_map      = {'mode': 'active'}
 
 " GHC-mod plugin:
 autocmd FileType haskell map <buffer> <silent> <Leader>e :GhcModCheck<Enter>
@@ -134,6 +136,15 @@ map <silent> <Leader><Space> :call <SID>AddSpaces()<Enter>
 map <silent> <Leader><BS>    :call <SID>RemoveSpaces()<Enter>
 " Collapses current block of blank lines to one
 map <silent> <Leader><Del>   :call <SID>CollapseSpaces()<Enter>
+
+fun! <SID>StripTrailingWhitespaces()
+	let l = line(".")
+	let c = col(".")
+	%s/\s\+$//e
+	call cursor(l, c)
+endfun
+
+autocmd FileType c,cpp,java,php,ruby,python,erlang autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 function s:AddSpaces() range
 	let separation = 2
