@@ -16,8 +16,9 @@ set guioptions-=R
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Monaco:h11
-		colorscheme desert
+		colorscheme zmrok
 		let macvim_hig_shift_movement = 1
+		inoremap <C-Space> <C-n>
 	endif
 elseif $TERM =~ 'xterm'
 	set t_Co=256
@@ -52,6 +53,16 @@ set nospell
 set spelllang=es,en
 set path+=/usr/local/include,**
 set pastetoggle=<F10>
+set colorcolumn=80
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam
+
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
+"let NERDTreeIgnore += ['\.beam$']
 
 autocmd BufEnter README,TODO if &filetype == '' | setlocal filetype=text | endif
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
