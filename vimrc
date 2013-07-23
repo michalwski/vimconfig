@@ -62,7 +62,9 @@ let g:ctrlp_custom_ignore = {
   \ 'link': 'some_bad_symbolic_links',
   \ }
 
-"let NERDTreeIgnore += ['\.beam$']
+let g:NERDTreeIgnore = ['\~$','\.beam$']
+
+let g:tagbar_ctags_bin = '/opt/local/bin/ctags'
 
 autocmd BufEnter README,TODO if &filetype == '' | setlocal filetype=text | endif
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
