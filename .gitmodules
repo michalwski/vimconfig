@@ -52,3 +52,9 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = git://github.com/terryma/vim-multiple-cursors.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
+[submodule "bundle/snipmate-erlang"]
+	path = bundle/snipmate-erlang
+	url = git://github.com/michalwski/vim-snipmate-erlang.git

@@ -89,7 +89,7 @@ autocmd FileType c,cpp highlight clear SpellBad   | highlight SpellBad ctermfg=w
 autocmd FileType c,cpp highlight clear SpellLocal | highlight SpellLocal ctermfg=white ctermbg=blue
 autocmd FileType c,cpp map <buffer> <silent> <Leader>e :call g:ClangUpdateQuickFix()<Enter>
 
-
+autocmd FileType erlang set omnifunc=erlangcomplete#Complete
 " Vimerl plugin:
 let erlang_folding     = 1
 let erlang_show_errors = 1
@@ -99,6 +99,10 @@ let erlang_skel_header = {'author': 'Michal Piotrowski <michal.piotrowski@erlang
 let g:syntastic_always_populate_loc_list=1
 let syntastic_auto_loc_list = 1
 let syntastic_mode_map      = {'mode': 'active'}
+
+" snipMAte plugin:
+let g:snips_author='Michal Piotrowski'
+let g:my_email_addr='michal.piotrowski@erlang-solutions.com'
 
 " GHC-mod plugin:
 autocmd FileType haskell map <buffer> <silent> <Leader>e :GhcModCheck<Enter>
