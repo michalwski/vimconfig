@@ -15,7 +15,7 @@ set guioptions-=R
 
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
-		set guifont=Monaco:h11
+		set guifont=Source\ Code\ Pro\ Light:h11
 		colorscheme zmrok
 		let macvim_hig_shift_movement = 1
 		inoremap <C-Space> <C-n>
@@ -55,6 +55,7 @@ set path+=/usr/local/include,**
 set pastetoggle=<F10>
 set colorcolumn=80
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam
+"set statusline+=%{fugitive#statusline()}
 
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -65,9 +66,11 @@ let g:ctrlp_custom_ignore = {
 let g:NERDTreeIgnore = ['\~$','\.beam$']
 
 let g:tagbar_ctags_bin = '/opt/local/bin/ctags'
+let g:ackprg = '/Users/michal.piotrowski/bin/ack -H --nocolor --nogroup --column'
 
 autocmd BufEnter README,TODO if &filetype == '' | setlocal filetype=text | endif
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
+autocmd BufEnter rebar.config   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter *.md        if &filetype == '' | setlocal filetype=markdown | endif
 
 autocmd FileType c,cpp                  setlocal foldmethod=syntax foldnestmax=2 cinoptions=(0,g0,N-s

@@ -58,3 +58,12 @@
 [submodule "bundle/snipmate-erlang"]
 	path = bundle/snipmate-erlang
 	url = git://github.com/michalwski/vim-snipmate-erlang.git
+[submodule "bundle/elixir-lang"]
+	path = bundle/elixir-lang
+	url = git://github.com/elixir-lang/vim-elixir.git
+[submodule "bundle/elixir-snippets"]
+	path = bundle/elixir-snippets
+	url = git://github.com/carlosgaldino/elixir-snippets.git
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
+	url = git://github.com/plasticboy/vim-markdown.git
