@@ -18,6 +18,7 @@ if split(system('uname'))[0] == 'Darwin'
 		set guifont=Source\ Code\ Pro\ Light:h11
 		colorscheme zmrok
 		let macvim_hig_shift_movement = 1
+		let $PATH .= ':/opt/local/bin'
 		inoremap <C-Space> <C-n>
 	endif
 elseif $TERM =~ 'xterm'
