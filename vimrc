@@ -15,7 +15,7 @@ set guioptions-=R
 
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
-		set guifont=Source\ Code\ Pro\ Light:h11
+		set guifont=Menlo:h11
 		colorscheme zmrok
 		let macvim_hig_shift_movement = 1
 		let $PATH .= ':/opt/local/bin'
@@ -65,9 +65,10 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 let g:NERDTreeIgnore = ['\~$','\.beam$']
+let g:NERDTreeChDirMode = 2
 
-let g:tagbar_ctags_bin = '/opt/local/bin/ctags'
-let g:ackprg = '/Users/michal.piotrowski/bin/ack -H --nocolor --nogroup --column'
+let g:tagbar_ctags_bin = '/Users/michal.piotrowski/bin/ctags'
+"let g:ackprg = '/Users/michal.piotrowski/bin/ack -H --nocolor --nogroup --column'
 
 autocmd BufEnter README,TODO if &filetype == '' | setlocal filetype=text | endif
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
@@ -103,6 +104,9 @@ let erlang_skel_header = {'author': 'Michal Piotrowski <michal.piotrowski@erlang
 let g:syntastic_always_populate_loc_list=1
 let syntastic_auto_loc_list = 1
 let syntastic_mode_map      = {'mode': 'active'}
+
+" AutoTag plugin:
+let g:autotagCtagsCmd = '~/bin/ctags'
 
 " snipMAte plugin:
 let g:snips_author='Michal Piotrowski'
