@@ -160,6 +160,17 @@ endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,erlang autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
+" Autocorrect often misspelled commands/words
+cabbr Q q
+cabbr W w
+cabbr WQ wq
+cabbr Wq wq
+cabbr Ed ed
+cabbr Qall qall
+cabbr Wqall wqall
+cabbr E Explore
+cabbr B b
+
 function s:AddSpaces() range
 	let separation = 2
 	let blanks     = repeat([''], separation)
