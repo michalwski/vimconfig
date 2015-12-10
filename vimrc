@@ -112,6 +112,18 @@ let g:autotagCtagsCmd = '~/bin/ctags'
 let g:snips_author='Michal Piotrowski'
 let g:my_email_addr='michal.piotrowski@erlang-solutions.com'
 
+"set path to wrangler directory
+let g:erlangWranglerPath = '/Users/michal.piotrowski/projects/wrangler'
+
+"sample wrangler bindings
+autocmd FileType erlang vnoremap <leader>e :WranglerExtractFunction<ENTER>
+autocmd FileType erlang noremap  <leader>m :WranglerRenameModule<ENTER>
+autocmd FileType erlang noremap  <leader>f :WranglerRenameFunction<ENTER>
+autocmd FileType erlang noremap  <leader>v :WranglerRenameVariable<ENTER>
+autocmd FileType erlang noremap  <leader>p :WranglerRenameProcess<ENTER>
+autocmd FileType erlang noremap  <leader>mv :WranglerMoveFunction<ENTER>
+autocmd FileType erlang noremap  <leader>u :WranglerUndo<ENTER>
+
 " GHC-mod plugin:
 autocmd FileType haskell map <buffer> <silent> <Leader>e :GhcModCheck<Enter>
 autocmd FileType haskell map <buffer> <silent> <Leader>t :GhcModType<Enter>

@@ -70,3 +70,6 @@
 [submodule "bundle/auto_tag"]
 	path = bundle/auto_tag
 	url = https://github.com/vim-scripts/AutoTag.git
+[submodule "bundle/vim-wrangler"]
+	path = bundle/vim-wrangler
+	url = https://github.com/ppikula/vim-wrangler.git
