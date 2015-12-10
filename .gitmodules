@@ -70,3 +70,15 @@
 [submodule "bundle/vim-wrangler"]
 	path = bundle/vim-wrangler
 	url = https://github.com/ppikula/vim-wrangler.git
+[submodule "bundle/vim-erlang-runtime"]
+	path = bundle/vim-erlang-runtime
+	url = git@github.com:vim-erlang/vim-erlang-runtime.git
+[submodule "bundle/vim-erlang-compiler"]
+	path = bundle/vim-erlang-compiler
+	url = git@github.com:vim-erlang/vim-erlang-compiler.git
+[submodule "bundle/vim-erlang-omnicomplete"]
+	path = bundle/vim-erlang-omnicomplete
+	url = git@github.com:vim-erlang/vim-erlang-omnicomplete.git
+[submodule "bundle/vim-erlang-tags"]
+	path = bundle/vim-erlang-tags
+	url = git@github.com:vim-erlang/vim-erlang-tags.git
