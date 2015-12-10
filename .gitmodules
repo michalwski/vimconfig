@@ -43,9 +43,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/vim-erlang"]
-	path = bundle/vim-erlang
-	url = git://github.com/hcs42/vim-erlang.git
 [submodule "bundle/ack-vim"]
 	path = bundle/ack-vim
 	url = git://github.com/mileszs/ack.vim.git
