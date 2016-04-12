@@ -17,7 +17,7 @@ if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
 		set guifont=Menlo:h11
 		colorscheme zmrok
-		let macvim_hig_shift_movement = 1
+		"let macvim_hig_shift_movement = 1
 		let $PATH .= ':/opt/local/bin'
 		inoremap <C-Space> <C-n>
 	endif
