@@ -39,7 +39,7 @@
         echo "Installing Vundles, please ignore key map error messages"
         echo ""
         :PluginInstall
-endif
+    endif
 
     call vundle#end()
     "must be last
@@ -48,6 +48,15 @@ endif
     syntax on                      " enable syntax
 
 " Setting up Vundle - the vim plugin bundler end
+
+if split(system('uname'))[0] == 'Darwin'
+    if has('gui_running')
+        set guifont=Source\ Code\ Pro\ Light:h11
+        let $PATH .= ':/opt/local/bin'
+        inoremap <C-Space> <C-n>
+    endif
+endif
+
 set nofoldenable "disable folding
 set number "display line numbers
 set relativenumber "display relative line numbers
