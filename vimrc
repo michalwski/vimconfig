@@ -7,7 +7,7 @@
         silent !mkdir -p ~/.vim/bundle
         silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
         let iCanHazVundle=0
-    endif
+	endif
     set nocompatible              " be iMproved, required
     filetype off                  " required
     set rtp+=~/.vim/bundle/vundle/
@@ -39,7 +39,7 @@
         echo "Installing Vundles, please ignore key map error messages"
         echo ""
         :PluginInstall
-    endif
+endif
 
     call vundle#end()
     "must be last
@@ -106,7 +106,7 @@ else
 	let g:ctrlp_prompt_mappings = {
 				\ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
 				\ }
-endif
+	endif
 
 let mapleader = "," " , is the leader char
 "map ,, to open completion
