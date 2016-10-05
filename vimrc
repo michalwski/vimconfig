@@ -15,7 +15,7 @@ set guioptions-=R
 
 if split(system('uname'))[0] == 'Darwin'
 	if has('gui_running')
-		set guifont=Menlo:h11
+		set guifont=Source\ Code\ Pro\ Light:h11
 		colorscheme zmrok
 		"let macvim_hig_shift_movement = 1
 		let $PATH .= ':/opt/local/bin'
