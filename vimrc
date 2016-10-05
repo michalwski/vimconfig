@@ -16,6 +16,24 @@
     "Add your bundles here
     Plugin 'Syntastic' "uber awesome syntax and errors highlighter
     Plugin 'altercation/vim-colors-solarized' "T-H-E colorscheme
+    Plugin 'tpope/vim-sensible'
+    Plugin 'vim-erlang/vim-erlang-compiler'
+    Plugin 'vim-erlang/vim-erlang-runtime'
+    Plugin 'vim-erlang/vim-erlang-tags'
+    Plugin 'vim-erlang/vim-erlang-omnicomplete'
+    Plugin 'vim-erlang/vim-compot'
+    Plugin 'edkolev/erlang-motions.vim'
+    Plugin 'vim-airline/vim-airline'
+    Plugin 'vim-airline/vim-airline-themes'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'ntpeters/vim-better-whitespace'
+    Plugin 'airblade/vim-gitgutter'
+    Plugin 'ctrlpvim/ctrlp.vim'
+    Plugin 'tpope/vim-commentary'
+    Plugin 'mileszs/ack.vim'
+    Plugin 'scrooloose/nerdtree'
+    Plugin 'terryma/vim-multiple-cursors'
+    Plugin 'elixir-lang/vim-elixir'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
