@@ -34,6 +34,7 @@
     Plugin 'scrooloose/nerdtree'
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'elixir-lang/vim-elixir'
+    Plugin 'wikitopian/hardmode'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -105,6 +106,8 @@ let g:syntastic_mode_map = {
 			\ "mode": "active",
 			\ "passive_filetypes": ["erlang"] }
 
+let g:HardMode_level = 'wannabe'
+
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 if executable('ag')
@@ -134,7 +137,8 @@ nnoremap <Leader>t :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFocus<CR>
 "opens window with location list for current file
 nnoremap <Leader>e :lopen<CR>
-
+"toogles the HardMode
+nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 " Autocorrect often misspelled commands/words
 cabbr Q q
 cabbr W w
