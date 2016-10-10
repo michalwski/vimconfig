@@ -66,6 +66,7 @@ set nowrap "do not wrap long lines
 set title "set the window title
 set colorcolumn=80
 set ttimeoutlen=-1
+set hlsearch
 
 "Set colorschemes
 let g:airline_theme = 'solarized'
