@@ -68,10 +68,12 @@ set title "set the window title
 set colorcolumn=80
 set ttimeoutlen=-1
 set hlsearch
+set autoread
 
 "Set colorschemes
 let g:airline_theme = 'solarized'
 
+autocmd CursorHold,CursorHoldI * checktime
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter rebar.config*   if &filetype == '' | setlocal filetype=erlang | endif
