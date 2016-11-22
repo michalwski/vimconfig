@@ -80,6 +80,7 @@ autocmd BufEnter app.config,sys.config   if &filetype == '' | setlocal filetype=
 
 "use 4 spaces for tab in Erlang files
 autocmd FileType erlang   setlocal foldmethod=syntax expandtab tabstop=4 shiftwidth=4 textwidth=0
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 "automatically remove trailing whitespace
 autocmd BufWritePre * StripWhitespace
