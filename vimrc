@@ -128,6 +128,11 @@ let mapleader = "," " , is the leader char
 inoremap <Leader>, <C-x><C-o>
 imap <C-w> <C-o><C-w>
 
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+
 let mapleader = "\<Space>" " Space is the leader now
 " Space o opens CtrlP search window
 nnoremap <Leader>o :CtrlP<CR>
