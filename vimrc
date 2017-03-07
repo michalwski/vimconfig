@@ -34,6 +34,7 @@
     Plugin 'scrooloose/nerdtree'
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'elixir-lang/vim-elixir'
+    Plugin 'tpope/vim-sleuth'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
