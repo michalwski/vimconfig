@@ -100,6 +100,8 @@ let g:ctrlp_working_path_mode = ''
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
+let g:erlang_tags_ignore = ['_build/mim*', '_build/fed*', '_build/default/lib/ejabberd']
+
 "configure syntastic
 let g:syntastic_enable_elixir_checker = 1 "enable for elixir
 let g:syntastic_always_populate_loc_list = 1
