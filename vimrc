@@ -63,6 +63,7 @@ set nofoldenable "disable folding
 set number "display line numbers
 set relativenumber "display relative line numbers
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
+set wildignore+=*/_build/default/lib/escalus/*,_build/default/lib/ejabberd/*,_build/mim*/*
 set background=dark "tells vim the background has dark color
 set nowrap "do not wrap long lines
 set title "set the window title
