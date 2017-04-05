@@ -35,6 +35,7 @@
     Plugin 'terryma/vim-multiple-cursors'
     Plugin 'elixir-lang/vim-elixir'
     Plugin 'tpope/vim-sleuth'
+    Plugin 'ppikula/vim-wrangler'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -110,6 +111,8 @@ let g:syntastic_mode_map = {
 			\ "passive_filetypes": ["erlang"] }
 
 let g:HardMode_level = 'wannabe'
+
+let g:erlangWranglerPath = '/Users/michal.piotrowski/projects/wrangler'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
