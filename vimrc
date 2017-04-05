@@ -14,7 +14,7 @@
     call vundle#begin()
     Plugin 'VundleVim/Vundle.vim'
     "Add your bundles here
-    Plugin 'Syntastic' "uber awesome syntax and errors highlighter
+    Plugin 'neomake/neomake'
     Plugin 'altercation/vim-colors-solarized' "T-H-E colorscheme
     Plugin 'tpope/vim-sensible'
     Plugin 'vim-erlang/vim-erlang-compiler'
@@ -88,6 +88,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "automatically remove trailing whitespace
 autocmd BufWritePre * StripWhitespace
 
+autocmd! BufWritePost * Neomake
+
 "change default gitgutter update time
 set updatetime=1000
 
@@ -103,15 +105,7 @@ let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
 let g:erlang_tags_ignore = ['_build/mim*', '_build/fed*', '_build/default/lib/ejabberd']
 
-"configure syntastic
-let g:syntastic_enable_elixir_checker = 1 "enable for elixir
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-			\ "mode": "active",
-			\ "passive_filetypes": ["erlang"] }
+let g:neomake_erlang_enabled_makers = []
 
 let g:HardMode_level = 'wannabe'
 
