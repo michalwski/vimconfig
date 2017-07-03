@@ -15,6 +15,7 @@
     Plugin 'VundleVim/Vundle.vim'
     "Add your bundles here
     Plugin 'neomake/neomake'
+    Plugin 'sheerun/vim-polyglot'
     Plugin 'altercation/vim-colors-solarized' "T-H-E colorscheme
     Plugin 'tpope/vim-sensible'
     Plugin 'vim-erlang/vim-erlang-compiler'
@@ -63,7 +64,7 @@ set nofoldenable "disable folding
 set number "display line numbers
 set relativenumber "display relative line numbers
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
-set wildignore+=*/_build/default/lib/escalus/*,_build/default/lib/ejabberd/*,_build/mim*/*
+set wildignore+=_build/default/lib/ejabberd/*,_build/mim*,_build/test/*,_build/fed*
 set background=dark "tells vim the background has dark color
 set nowrap "do not wrap long lines
 set title "set the window title
@@ -80,6 +81,7 @@ autocmd CursorHold,CursorHoldI * checktime
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter rebar.config*   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter app.config,sys.config   if &filetype == '' | setlocal filetype=erlang | endif
+autocmd BufEnter Dockerfile*	setlocal filetype=dockerfile
 
 "use 4 spaces for tab in Erlang files
 autocmd FileType erlang   setlocal foldmethod=syntax expandtab tabstop=4 shiftwidth=4 textwidth=0
@@ -103,7 +105,7 @@ let g:ctrlp_working_path_mode = ''
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
-let g:erlang_tags_ignore = ['_build/mim*', '_build/fed*', '_build/default/lib/ejabberd']
+let g:erlang_tags_ignore = ['"_build/mim*"', '"_build/fed*"', '_build/default/lib/ejabberd']
 
 let g:neomake_erlang_enabled_makers = []
 
