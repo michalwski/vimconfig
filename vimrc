@@ -123,7 +123,10 @@ else
 	let g:ctrlp_prompt_mappings = {
 				\ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
 				\ }
-	endif
+endif
+
+let g:polyglot_disabled = ['erl']
+
 
 let mapleader = "," " , is the leader char
 "map ,, to open completion
