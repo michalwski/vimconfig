@@ -115,17 +115,6 @@ let g:erlangWranglerPath = '/Users/michal.piotrowski/projects/wrangler'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-if executable('ag')
-	set grepprg=ag\ --nogroup\ --nocolor
-
-	let g:ctrlp_user_command = 'ag %s --ignore "*.beam" --ignore-dir "ebin" -l -U --nocolor -g ""'
-else
-	let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-	let g:ctrlp_prompt_mappings = {
-				\ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
-				\ }
-endif
-
 let g:polyglot_disabled = ['erl']
 
 
