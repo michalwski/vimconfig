@@ -96,7 +96,7 @@ autocmd! BufWritePost * Neomake
 set updatetime=1000
 
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)',
+			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)|(ct_report)',
 			\ 'file': '\v\.(exe|so|dll|beam)$',
 			\ 'link': 'some_bad_symbolic_links',
 			\ }
