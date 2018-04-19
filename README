@@ -5,38 +5,13 @@
   |___/_/_/ /_/ /_/
 ======================
 
-F*ck yeah!
-
-
  How to use this repository
 ----------------------------
 
 1. cd $HOME
 2. git clone <repository> .vim
-3. cd .vim
-4. git submodule init
-5. git submodule update
-6. ln -s .vim/vimrc .vimrc
+3. vim
 
-This Vim configuration uses Pathogen (http://github.com/tpope/vim-pathogen),
-the plugins are placed in `.vim/bundle/'. Some of the plugins are hosted in
-GitHub so I use Git submodules to track those plugins in `.vim/bundle/' as
-separate repositories.
+All plugins will be installed automaticaly
 
-
- Working with Git submodules
------------------------------
-
-- To add a new submodule run from the top level directory:
-
-	git submodule add <repository> bundle/<plugin>
-
-- To pull a submodule repository run from the top level directory:
-
-	git submodule init
-	git submodule update
-
-- To update all the submodule repositories in one shot run from the top
-  level directory, commit afterwards:
-
-	git submodule foreach 'git pull'
+This Vim configuration uses Vundle (https://github.com/VundleVim/Vundle.vim)
