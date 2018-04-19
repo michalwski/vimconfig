@@ -24,8 +24,8 @@
     Plugin 'vim-erlang/vim-erlang-omnicomplete'
     Plugin 'vim-erlang/vim-compot'
     Plugin 'edkolev/erlang-motions.vim'
-    Plugin 'vim-airline/vim-airline'
-    Plugin 'vim-airline/vim-airline-themes'
+"    Plugin 'vim-airline/vim-airline'
+"    Plugin 'vim-airline/vim-airline-themes'
     Plugin 'tpope/vim-fugitive'
     Plugin 'ntpeters/vim-better-whitespace'
     Plugin 'airblade/vim-gitgutter'
@@ -74,7 +74,7 @@ set hlsearch
 set autoread
 
 "Set colorschemes
-let g:airline_theme = 'solarized'
+"let g:airline_theme = 'solarized'
 
 autocmd CursorHold,CursorHoldI * checktime
 "Erlang files
