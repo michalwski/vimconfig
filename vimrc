@@ -124,6 +124,8 @@ let mapleader = "," " , is the leader char
 "map ,, to open completion
 inoremap <Leader>, <C-x><C-o>
 imap <C-w> <C-o><C-w>
+imap jk <Esc>
+imap kj <Esc>
 
 inoremap <Up> <nop>
 inoremap <Down> <nop>
