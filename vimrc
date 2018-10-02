@@ -81,7 +81,7 @@ set autoread
 "Set colorschemes
 "let g:airline_theme = 'solarized'
 
-autocmd CursorHold,CursorHoldI * checktime
+autocmd CursorHold,CursorHoldI * if !bufexists("[Command Line]") | checktime | endif
 "Erlang files
 autocmd BufEnter *.escript   if &filetype == '' | setlocal filetype=erlang | endif
 autocmd BufEnter rebar.config*   if &filetype == '' | setlocal filetype=erlang | endif
