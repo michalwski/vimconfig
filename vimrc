@@ -68,6 +68,7 @@ set number "display line numbers
 set wildmode=longest:full,full
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
 set wildignore+=_build/default/lib/ejabberd/*,_build/mim*,_build/test/*,_build/fed*
+set wildignore+=_build/default/lib/mongooseim/*,_build/mim*,_build/test/*,_build/fed*
 set wildignore+=test.disabled/ejabberd_tests/ct_report/*
 set background=light
 set nowrap "do not wrap long lines
@@ -109,7 +110,7 @@ let g:ctrlp_working_path_mode = ''
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
-let g:erlang_tags_ignore = ['"_build/mim*"', '"_build/fed*"', '_build/default/lib/ejabberd']
+let g:erlang_tags_ignore = ['"_build/mim*"', '"_build/fed*"', '_build/default/lib/ejabberd', '_build/default/lib/mongooseim']
 
 let g:neomake_erlang_enabled_makers = []
 
