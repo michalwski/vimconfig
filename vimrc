@@ -38,6 +38,7 @@
     Plugin 'elixir-lang/vim-elixir'
     Plugin 'tpope/vim-sleuth'
     Plugin 'ppikula/vim-wrangler'
+    Plugin 'NLKNguyen/papercolor-theme'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -48,7 +49,8 @@
     call vundle#end()
     "must be last
     filetype plugin indent on " load filetype plugins/indent settings
-    colorscheme solarized
+    colorscheme PaperColor
+    "colorscheme solarized
     syntax on                      " enable syntax
 
 " Setting up Vundle - the vim plugin bundler end
@@ -67,7 +69,7 @@ set wildmode=longest:full,full
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.beam "do not suggest this files in explore :e command
 set wildignore+=_build/default/lib/ejabberd/*,_build/mim*,_build/test/*,_build/fed*
 set wildignore+=test.disabled/ejabberd_tests/ct_report/*
-set background=dark "tells vim the background has dark color
+set background=light
 set nowrap "do not wrap long lines
 set title "set the window title
 set colorcolumn=80
