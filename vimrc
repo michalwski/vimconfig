@@ -116,7 +116,7 @@ let g:neomake_erlang_enabled_makers = []
 
 let g:HardMode_level = 'wannabe'
 
-let g:erlangWranglerPath = '/Users/michalpiotrowski/projects/wrangler'
+let g:erlangWranglerPath = '/Users/michalpiotrowski/projects/wrangler/bin'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
