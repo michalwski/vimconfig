@@ -124,8 +124,13 @@ let g:erlangWranglerPath = '/Users/michalpiotrowski/projects/wrangler/bin'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:polyglot_disabled = ['erl']
+let g:polyglot_disabled = ['erl', 'rs']
 
+let g:ale_rust_cargo_use_check = 1
+
+let g:ale_linters = {
+\   'erlang': [],
+\}
 
 let mapleader = "," " , is the leader char
 "map ,, to open completion
