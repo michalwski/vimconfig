@@ -102,6 +102,7 @@ autocmd! BufWritePost * Neomake
 
 "change default gitgutter update time
 set updatetime=1000
+let g:gitgutter_sign_allow_clobber = 1
 
 let g:ctrlp_custom_ignore = {
 			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)|(ct_report)',
@@ -162,6 +163,7 @@ cabbr E Explore
 cabbr B b
 
 if has("nvim")
+  set signcolumn=auto:3
   " Make escape work in the Neovim terminal.
   tnoremap <Esc> <C-\><C-n>
 
