@@ -39,6 +39,9 @@
     Plugin 'tpope/vim-sleuth'
     Plugin 'ppikula/vim-wrangler'
     Plugin 'NLKNguyen/papercolor-theme'
+    Plugin 'rust-lang/rust.vim'
+    Plugin 'ervandew/supertab'
+    Plugin 'w0rp/ale'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
