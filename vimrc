@@ -1,61 +1,60 @@
-   language en_US
-   " Install vim-plug if not found
-   if empty(glob('~/.vim/autoload/plug.vim'))
-     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-   endif
+language en_US
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-   let g:polyglot_disabled = ['erl', 'rs']
+let g:polyglot_disabled = ['erl', 'rs']
 
-   call plug#begin('~/.vim/plugged')
-    "Add your bundles here
-    Plug 'neomake/neomake'
-    Plug 'sheerun/vim-polyglot'
-    Plug 'altercation/vim-colors-solarized' "T-H-E colorscheme
-    Plug 'tpope/vim-sensible'
-    Plug 'vim-erlang/vim-erlang-compiler'
-    Plug 'vim-erlang/vim-erlang-runtime'
-    Plug 'vim-erlang/vim-erlang-tags'
-    Plug 'vim-erlang/vim-erlang-omnicomplete'
-"    Plug 'vim-erlang/vim-compot'
-    Plug 'edkolev/erlang-motions.vim'
+call plug#begin('~/.vim/plugged')
+"Add your bundles here
+Plug 'neomake/neomake'
+Plug 'sheerun/vim-polyglot'
+Plug 'altercation/vim-colors-solarized' "T-H-E colorscheme
+Plug 'tpope/vim-sensible'
+Plug 'vim-erlang/vim-erlang-compiler'
+Plug 'vim-erlang/vim-erlang-runtime'
+Plug 'vim-erlang/vim-erlang-tags'
+Plug 'vim-erlang/vim-erlang-omnicomplete'
+Plug 'edkolev/erlang-motions.vim'
 "    Plug 'vim-airline/vim-airline'
 "    Plug 'vim-airline/vim-airline-themes'
-    Plug 'tpope/vim-fugitive'
-    Plug 'ntpeters/vim-better-whitespace'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'mileszs/ack.vim'
-    Plug 'scrooloose/nerdtree'
-    Plug 'elixir-lang/vim-elixir'
-    Plug 'mhinz/vim-mix-format'
-    Plug 'tpope/vim-sleuth'
-    Plug 'NLKNguyen/papercolor-theme'
-    Plug 'rust-lang/rust.vim'
-    Plug 'ervandew/supertab'
-    Plug 'w0rp/ale'
-    Plug 'tpope/vim-endwise'
-    call plug#end()
+Plug 'tpope/vim-fugitive'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'mileszs/ack.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'elixir-lang/vim-elixir'
+Plug 'mhinz/vim-mix-format'
+Plug 'tpope/vim-sleuth'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'rust-lang/rust.vim'
+Plug 'ervandew/supertab'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-endwise'
+call plug#end()
 
-   " Run PlugInstall if there are missing plugins
-   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-   endif
-    "...All your other bundles...
-    "must be last
-    filetype plugin indent on " load filetype plugins/indent settings
-    colorscheme PaperColor
-    "colorscheme solarized
-    syntax on                      " enable syntax
+" Run PlugInstall if there are missing plugins
+if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"...All your other bundles...
+"must be last
+filetype plugin indent on " load filetype plugins/indent settings
+colorscheme PaperColor
+"colorscheme solarized
+syntax on                      " enable syntax
 
 " Setting up Vundle - the vim plugin bundler end
 
 if split(system('uname'))[0] == 'Darwin'
-    if has('gui_running')
-        set guifont=Source\ Code\ Pro\ Light:h11
-        let $PATH .= ':/opt/local/bin'
-        inoremap <C-Space> <C-n>
-    endif
+  if has('gui_running')
+    set guifont=Source\ Code\ Pro\ Light:h11
+    let $PATH .= ':/opt/local/bin'
+    inoremap <C-Space> <C-n>
+  endif
 endif
 
 set nofoldenable "disable folding
@@ -97,10 +96,10 @@ set updatetime=1000
 let g:gitgutter_sign_allow_clobber = 1
 
 let g:ctrlp_custom_ignore = {
-			\ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)|(ct_report)',
-			\ 'file': '\v\.(exe|so|dll|beam)$',
-			\ 'link': 'some_bad_symbolic_links',
-			\ }
+      \ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)|(ct_report)',
+      \ 'file': '\v\.(exe|so|dll|beam)$',
+      \ 'link': 'some_bad_symbolic_links',
+      \ }
 let g:ctrlp_working_path_mode = ''
 
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
@@ -123,9 +122,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let g:ale_rust_cargo_use_check = 1
 
 let g:ale_linters = {
-\   'erlang': [],
-\   'elixir': [],
-\}
+      \   'erlang': [],
+      \   'elixir': [],
+      \}
 
 let mapleader = "," " , is the leader char
 "map ,, to open completion
