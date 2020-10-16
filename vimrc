@@ -1,54 +1,47 @@
    language en_US
-" Setting up Vundle - the vim plugin bundler
-    let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
-        let iCanHazVundle=0
-	endif
-    set nocompatible              " be iMproved, required
-    filetype off                  " required
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#begin()
-    Plugin 'VundleVim/Vundle.vim'
-    "Add your bundles here
-    Plugin 'neomake/neomake'
-    Plugin 'sheerun/vim-polyglot'
-    Plugin 'altercation/vim-colors-solarized' "T-H-E colorscheme
-    Plugin 'tpope/vim-sensible'
-    Plugin 'vim-erlang/vim-erlang-compiler'
-    Plugin 'vim-erlang/vim-erlang-runtime'
-    Plugin 'vim-erlang/vim-erlang-tags'
-    Plugin 'vim-erlang/vim-erlang-omnicomplete'
-"    Plugin 'vim-erlang/vim-compot'
-    Plugin 'edkolev/erlang-motions.vim'
-"    Plugin 'vim-airline/vim-airline'
-"    Plugin 'vim-airline/vim-airline-themes'
-    Plugin 'tpope/vim-fugitive'
-    Plugin 'ntpeters/vim-better-whitespace'
-    Plugin 'airblade/vim-gitgutter'
-    Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'mileszs/ack.vim'
-    Plugin 'scrooloose/nerdtree'
-    Plugin 'elixir-lang/vim-elixir'
-    Plugin 'mhinz/vim-mix-format'
-    Plugin 'tpope/vim-sleuth'
-    Plugin 'NLKNguyen/papercolor-theme'
-    Plugin 'rust-lang/rust.vim'
-    Plugin 'ervandew/supertab'
-    Plugin 'w0rp/ale'
-    Plugin 'tpope/vim-endwise'
-    "...All your other bundles...
-    if iCanHazVundle == 0
-        echo "Installing Vundles, please ignore key map error messages"
-        echo ""
-        :PluginInstall
-    endif
+   " Install vim-plug if not found
+   if empty(glob('~/.vim/autoload/plug.vim'))
+     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   endif
 
-    call vundle#end()
+   let g:polyglot_disabled = ['erl', 'rs']
+
+   call plug#begin('~/.vim/plugged')
+    "Add your bundles here
+    Plug 'neomake/neomake'
+    Plug 'sheerun/vim-polyglot'
+    Plug 'altercation/vim-colors-solarized' "T-H-E colorscheme
+    Plug 'tpope/vim-sensible'
+    Plug 'vim-erlang/vim-erlang-compiler'
+    Plug 'vim-erlang/vim-erlang-runtime'
+    Plug 'vim-erlang/vim-erlang-tags'
+    Plug 'vim-erlang/vim-erlang-omnicomplete'
+"    Plug 'vim-erlang/vim-compot'
+    Plug 'edkolev/erlang-motions.vim'
+"    Plug 'vim-airline/vim-airline'
+"    Plug 'vim-airline/vim-airline-themes'
+    Plug 'tpope/vim-fugitive'
+    Plug 'ntpeters/vim-better-whitespace'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'mileszs/ack.vim'
+    Plug 'scrooloose/nerdtree'
+    Plug 'elixir-lang/vim-elixir'
+    Plug 'mhinz/vim-mix-format'
+    Plug 'tpope/vim-sleuth'
+    Plug 'NLKNguyen/papercolor-theme'
+    Plug 'rust-lang/rust.vim'
+    Plug 'ervandew/supertab'
+    Plug 'w0rp/ale'
+    Plug 'tpope/vim-endwise'
+    call plug#end()
+
+   " Run PlugInstall if there are missing plugins
+   if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+   endif
+    "...All your other bundles...
     "must be last
     filetype plugin indent on " load filetype plugins/indent settings
     colorscheme PaperColor
@@ -126,7 +119,6 @@ let g:erlangWranglerPath = '/Users/michalpiotrowski/projects/wrangler/bin'
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:polyglot_disabled = ['erl', 'rs']
 
 let g:ale_rust_cargo_use_check = 1
 
