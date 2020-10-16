@@ -14,4 +14,4 @@
 
 All plugins will be installed automaticaly
 
-This Vim configuration uses Vundle (https://github.com/VundleVim/Vundle.vim)
+This Vim configuration uses Plug (https://github.com/junegunn/vim-plug)
