@@ -34,6 +34,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-endwise'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
