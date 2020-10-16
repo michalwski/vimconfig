@@ -31,17 +31,16 @@
     Plugin 'ntpeters/vim-better-whitespace'
     Plugin 'airblade/vim-gitgutter'
     Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'tpope/vim-commentary'
     Plugin 'mileszs/ack.vim'
     Plugin 'scrooloose/nerdtree'
-"    Plugin 'terryma/vim-multiple-cursors'
     Plugin 'elixir-lang/vim-elixir'
+    Plugin 'mhinz/vim-mix-format'
     Plugin 'tpope/vim-sleuth'
-    Plugin 'ppikula/vim-wrangler'
     Plugin 'NLKNguyen/papercolor-theme'
     Plugin 'rust-lang/rust.vim'
     Plugin 'ervandew/supertab'
     Plugin 'w0rp/ale'
+    Plugin 'tpope/vim-endwise'
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Vundles, please ignore key map error messages"
@@ -117,6 +116,9 @@ let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 let g:erlang_tags_ignore = ['"_build/mim*"', '"_build/fed*"', '_build/default/lib/ejabberd', '_build/default/lib/mongooseim']
 
 let g:neomake_erlang_enabled_makers = []
+let g:neomake_elixir_enabled_makers = ['mix', 'credo']
+
+let g:mix_format_on_save = 1
 
 let g:HardMode_level = 'wannabe'
 
@@ -130,6 +132,7 @@ let g:ale_rust_cargo_use_check = 1
 
 let g:ale_linters = {
 \   'erlang': [],
+\   'elixir': [],
 \}
 
 let mapleader = "," " , is the leader char
@@ -166,6 +169,8 @@ cabbr Qall qall
 cabbr Wqall wqall
 cabbr E Explore
 cabbr B b
+
+autocmd FileType md,markdown,gitcommit setlocal spell spelllang=en
 
 if has("nvim")
   set signcolumn=auto:3
