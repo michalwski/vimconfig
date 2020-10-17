@@ -48,8 +48,6 @@ colorscheme PaperColor
 "colorscheme solarized
 syntax on                      " enable syntax
 
-" Setting up Vundle - the vim plugin bundler end
-
 if split(system('uname'))[0] == 'Darwin'
   if has('gui_running')
     set guifont=Source\ Code\ Pro\ Light:h11
@@ -113,12 +111,7 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 let g:mix_format_on_save = 1
 
-let g:HardMode_level = 'wannabe'
-
-let g:erlangWranglerPath = '/Users/michalpiotrowski/projects/wrangler/bin'
-
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
 
 let g:ale_rust_cargo_use_check = 1
 
@@ -149,8 +142,6 @@ nnoremap <Leader>t :NERDTreeToggle<CR>
 nnoremap <Leader>f :NERDTreeFocus<CR>
 "opens window with location list for current file
 nnoremap <Leader>e :lopen<CR>
-"toogles the HardMode
-nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 " Autocorrect often misspelled commands/words
 cabbr Q q
 cabbr W w
@@ -161,6 +152,26 @@ cabbr Qall qall
 cabbr Wqall wqall
 cabbr E Explore
 cabbr B b
+" ---------- Coc Key Mappings
+
+nmap <silent> <M-f> <Plug>(coc-format)
+nmap <silent> <M-F> <Plug>(coc-format-selected)
+nmap <silent> <M-o> :CocList outline<cr>
+nmap <silent> <M-d> :CocList diagnostics<cr>
+nmap <silent> <M-s> :CocList -I symbols<cr>
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> gp <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 autocmd FileType md,markdown,gitcommit setlocal spell spelllang=en
 

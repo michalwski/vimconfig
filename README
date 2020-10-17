@@ -15,3 +15,10 @@
 All plugins will be installed automaticaly
 
 This Vim configuration uses Plug (https://github.com/junegunn/vim-plug)
+
+The easiest way to install elixir language server working with coc is to do the following:
+```
+:CocInstall coc-elixir
+```
+
+Inside your (neo)vim.
