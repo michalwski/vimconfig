@@ -23,7 +23,6 @@ Plug 'edkolev/erlang-motions.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'elixir-lang/vim-elixir'
@@ -35,6 +34,8 @@ Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-endwise'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
@@ -120,6 +121,11 @@ let g:ale_linters = {
       \   'elixir': [],
       \}
 
+" FZF
+let g:fzf_layout = { 'down': '~25%' }
+
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
 let mapleader = "," " , is the leader char
 "map ,, to open completion
 inoremap <Leader>, <C-x><C-o>
@@ -132,8 +138,6 @@ inoremap <Left> <nop>
 inoremap <Right> <nop>
 
 let mapleader = "\<Space>" " Space is the leader now
-" Space o opens CtrlP search window
-nnoremap <Leader>o :CtrlP<CR>
 " Space w saves the file
 nnoremap <Leader>w :w<CR>
 "toggles the NERDTree
@@ -172,6 +176,11 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" FZF Key Mappings
+" Space o opens FZF :Files search window
+nnoremap <Leader>o :Files<CR>
+nnoremap <C-p> :Files<CR>
 
 autocmd FileType md,markdown,gitcommit setlocal spell spelllang=en
 
