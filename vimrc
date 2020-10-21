@@ -158,16 +158,14 @@ cabbr E Explore
 cabbr B b
 " ---------- Coc Key Mappings
 
-nmap <silent> <M-f> <Plug>(coc-format)
-nmap <silent> <M-F> <Plug>(coc-format-selected)
-nmap <silent> <M-o> :CocList outline<cr>
-nmap <silent> <M-d> :CocList diagnostics<cr>
-nmap <silent> <M-s> :CocList -I symbols<cr>
+nmap <silent> <Leader>cf <Plug>(coc-format)
+nmap <silent> <Leader>co :CocList outline<cr>
+nmap <silent> <Leader>cd :CocList diagnostics<cr>
 
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Use `[g` and `]g` to navigate diagnostics
+" Use `gp` and `gn` to navigate diagnostics
 nmap <silent> gp <Plug>(coc-diagnostic-prev)
 nmap <silent> gn <Plug>(coc-diagnostic-next)
 
