@@ -7,7 +7,6 @@ endif
 
 call plug#begin('~/.vim/plugged')
 "Add your bundles here
-Plug 'neomake/neomake'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-endwise'
@@ -92,9 +91,6 @@ let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
 
 let g:erlang_tags_ignore = ['"_build/mim*"', '"_build/fed*"', '_build/default/lib/ejabberd', '_build/default/lib/mongooseim']
-
-let g:neomake_erlang_enabled_makers = []
-let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 
 let g:mix_format_on_save = 1
 
