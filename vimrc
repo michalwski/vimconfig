@@ -5,12 +5,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-let g:polyglot_disabled = ['erl', 'rs']
-
 call plug#begin('~/.vim/plugged')
 "Add your bundles here
 Plug 'neomake/neomake'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-endwise'
@@ -29,7 +26,6 @@ Plug 'mhinz/vim-mix-format'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
-Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -103,13 +99,6 @@ let g:neomake_elixir_enabled_makers = ['mix', 'credo']
 let g:mix_format_on_save = 1
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-let g:ale_rust_cargo_use_check = 1
-
-let g:ale_linters = {
-      \   'erlang': [],
-      \   'elixir': [],
-      \}
 
 " FZF
 let g:fzf_layout = { 'down': '~25%' }
