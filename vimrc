@@ -11,28 +11,25 @@ call plug#begin('~/.vim/plugged')
 "Add your bundles here
 Plug 'neomake/neomake'
 Plug 'sheerun/vim-polyglot'
-Plug 'altercation/vim-colors-solarized' "T-H-E colorscheme
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-erlang/vim-erlang-compiler'
 Plug 'vim-erlang/vim-erlang-runtime'
 Plug 'vim-erlang/vim-erlang-tags'
 Plug 'vim-erlang/vim-erlang-omnicomplete'
 Plug 'edkolev/erlang-motions.vim'
-"    Plug 'vim-airline/vim-airline'
-"    Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'airblade/vim-gitgutter'
 Plug 'mileszs/ack.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'elixir-lang/vim-elixir'
 Plug 'mhinz/vim-mix-format'
-Plug 'tpope/vim-sleuth'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-endwise'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -94,13 +91,6 @@ autocmd! BufWritePost * Neomake
 "change default gitgutter update time
 set updatetime=1000
 let g:gitgutter_sign_allow_clobber = 1
-
-let g:ctrlp_custom_ignore = {
-      \ 'dir':  '\v([\/]\.(git|hg|svn)$)|(Mnesia.*)|(ct_report)',
-      \ 'file': '\v\.(exe|so|dll|beam)$',
-      \ 'link': 'some_bad_symbolic_links',
-      \ }
-let g:ctrlp_working_path_mode = ''
 
 let g:NERDTreeIgnore = ['\~$','\.beam$'] "ignore such files in the tree
 let g:NERDTreeChDirMode = 2 "change directory when opening NERDtree with a path
