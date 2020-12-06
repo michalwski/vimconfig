@@ -81,8 +81,6 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "automatically remove trailing whitespace
 autocmd BufWritePre * StripWhitespace
 
-autocmd! BufWritePost * Neomake
-
 "change default gitgutter update time
 set updatetime=1000
 let g:gitgutter_sign_allow_clobber = 1
