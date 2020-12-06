@@ -59,7 +59,7 @@ set wildignore+=test.disabled/ejabberd_tests/ct_report/*
 set background=light
 set nowrap "do not wrap long lines
 set title "set the window title
-set colorcolumn=100
+set colorcolumn=98
 set ttimeoutlen=-1
 set hlsearch
 set autoread
