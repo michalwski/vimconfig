@@ -152,6 +152,10 @@ nmap <silent> gr <Plug>(coc-references)
 " Space o opens FZF :Files search window
 nnoremap <Leader>o :Files<CR>
 nnoremap <C-p> :Files<CR>
+nnoremap <Leader>g :GFiles
+nnoremap <Leader>b :Buffers
+nnoremap <Leader>ll :Lines
+nnoremap <Leader>lb :BLines
 
 autocmd FileType md,markdown,gitcommit setlocal spell spelllang=en
 
