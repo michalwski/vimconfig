@@ -28,6 +28,10 @@ Plug 'ervandew/supertab'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'preservim/vimux'
+Plug 'spiegela/vimix'
+
 call plug#end()
 
 " Run PlugInstall if there are missing plugins
@@ -152,10 +156,27 @@ nmap <silent> gr <Plug>(coc-references)
 " Space o opens FZF :Files search window
 nnoremap <Leader>o :Files<CR>
 nnoremap <C-p> :Files<CR>
-nnoremap <Leader>g :GFiles
-nnoremap <Leader>b :Buffers
-nnoremap <Leader>ll :Lines
-nnoremap <Leader>lb :BLines
+nnoremap <Leader>g :GFiles<CR>
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>ll :Lines<CR>
+nnoremap <Leader>lb :BLines<CR>
+
+" Vimux Key Mappings
+" Inspect runner pane
+map <leader>vi :VimuxInspectRunner<cr>
+" Prompt for a command to run
+map <leader>vp :VimuxPromptCommand<cr>
+" Run last command executed by VimuxRunCommand
+map <leader>vl :VimuxRunLastCommand<cr>
+" Zoom the tmux runner pane
+map <leader>vz :VimuxZoomRunner<cr>
+" Clear VimuxRuner History
+map <leader>vc :VimuxClearRunnerHistory<cr>
+" Quite the VimuxRunner
+map <leader>vq :VimuxCloseRunner<cr>
+
+" Enable default vimix mappings
+let g:vimix_map_keys = 1
 
 autocmd FileType md,markdown,gitcommit setlocal spell spelllang=en
 
