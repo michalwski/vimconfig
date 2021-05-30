@@ -25,12 +25,12 @@ Plug 'mhinz/vim-mix-format'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'rust-lang/rust.vim'
 Plug 'ervandew/supertab'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/vimux'
 Plug 'spiegela/vimix'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
