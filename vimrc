@@ -197,3 +197,29 @@ if has("nvim")
   " Prefer Neovim terminal insert mode to normal mode.
   autocmd BufEnter term://* startinsert
 endif
+
+function! SetBackgroundMode(...)
+    let s:new_bg = "light"
+    let s:mode = ""
+    if split(system('uname'))[0] == 'Darwin'
+        let s:mode = systemlist("defaults read -g AppleInterfaceStyle")
+        if !empty(s:mode) && s:mode[0] ==? "dark"
+            let s:new_bg = "dark"
+        else
+            let s:new_bg = "light"
+        endif
+    else
+        " This is for Linux where I use an environment variable for this:
+        if $VIM_BACKGROUND ==? "dark"
+            let s:new_bg = "dark"
+        else
+            let s:new_bg = "light"
+        endif
+    endif
+    if &background !=? s:new_bg
+        let &background = s:new_bg
+    endif
+endfunction
+
+call SetBackgroundMode()
+call timer_start(30000, "SetBackgroundMode", {"repeat": -1})
